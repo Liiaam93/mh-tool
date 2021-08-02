@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+div {
+  border: 2px solid black;
+  padding: auto;
+  margin: auto;
+  width: 800px;
+}
+.container {
+  border: black solid 2px;
+}
