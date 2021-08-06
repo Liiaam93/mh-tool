@@ -16,6 +16,9 @@ export const fetchNewHannants = async (page) => {
       let name = $(`#product_listing > tbody > #_${i} > td:nth-child(2) > a`)
         .text()
         .replace(/\n/g, "");
+      let img2 = $(
+        `#product_listing > tbody > #_${i} > td.image_cell > a > img.big-image.loaded`
+      ).attr("src");
       let img = $(
         `#product_listing > tbody > #_${i} > td.image_cell > a > img`
       ).attr("src");
@@ -41,6 +44,7 @@ export const fetchNewHannants = async (page) => {
         name: name,
         scale: scale,
         img: img,
+        img2: img2,
         desc: desc,
         type: type,
         price: price,

@@ -10,7 +10,9 @@ const NavBar = () => {
         <Link href="/about">New Hannants</Link> &nbsp; &nbsp; &nbsp;
         <Link href="/about">Expo</Link>
       </nav>
-
+      <br />
+      <br />
+      <br />
       <div className="center">
         <Image
           className="logo"

@@ -1,27 +1,45 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const NewHannants = ({ newProducts }) => {
   if (!newProducts) {
     return null;
   }
-  return newProducts.map((item, index) => (
+
+  let newProductMap = newProducts.map((item, index) => (
     <React.Fragment key={index}>
       <div className="container">
+        <img
+          src={item.img.replace("thumbs", "pics")}
+          alt=""
+          className="newImg"
+        />{" "}
+        <img
+          src={item.img.replace("thumbs", "pics").replace("jpg", "JPG")}
+          alt=""
+          className="newImg"
+        />
+        <br />
         {item.name} {item.scale} {item.desc}
         <br />
-        <img src={item.img} alt="" className="newImg" />
-        <br />
-        Price: {item.price}
-        <br />
-        Stock: {item.stock}
-        <br />
-        Arrival: {item.arrival}
-        <br />
-        {item.type}
+        <p className="det">
+          Price: {item.price}
+          <br />
+          Our Price: {(item.price.replace("£", "") * 0.9).toFixed(2)}
+          <br />
+          Stock: {item.stock}
+          <br />
+          Arrival: {item.arrival}
+          <br />
+          {item.type}
+        </p>
       </div>
       <br />
     </React.Fragment>
   ));
+
+  return <div className="flex">{newProductMap}</div>;
 };
 
 export default NewHannants;

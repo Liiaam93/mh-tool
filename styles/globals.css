@@ -22,9 +22,12 @@ div {
   background-color: rgb(151, 151, 151);
   text-align: center;
   border: black solid 2px;
-  margin: auto;
-  width: 30%;
-  padding: auto;
+  border-radius: 5%;
+  margin-top: 2px;
+  margin-right: auto;
+  width: 33%;
+  height: auto;
+  padding: 15px;
   font-family: monospace;
 }
 .nav {
@@ -34,24 +37,40 @@ div {
   color: white;
   margin: auto;
   border: solid black 2px;
-  width: 30%;
+  width: 100%;
   background-color: rgb(105, 10, 10);
   padding: 7px;
+  position: fixed;
+  justify-content: space-between;
 }
 .buttons {
   text-align: center;
+  font-size: x-large;
   padding: 10px;
 }
 .newImg {
-  border: solid black 2px;
+  border: solid black 1px;
+  margin: 0px;
+  padding: 0%;
+  max-width: 80%;
 }
 .newProducts {
   display: flex;
 }
 .logo {
+  margin-top: 50px;
   margin-left: 50%;
 }
 .center {
   text-align: center;
+  font-size: larger;
   margin: auto;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.det {
+  color: rgb(53, 53, 53);
 }
