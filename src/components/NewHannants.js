@@ -9,7 +9,7 @@ const NewHannants = ({ newProducts }) => {
       <div className="container">
         {item.name} {item.scale} {item.desc}
         <br />
-        <img src={item.img} alt="" />
+        <img src={item.img} alt="" className="newImg" />
         <br />
         Price: {item.price}
         <br />

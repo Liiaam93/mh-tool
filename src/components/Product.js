@@ -9,15 +9,17 @@ const Product = ({ productData }) => {
     return null;
   }
   const img = productData.imageSrc;
-
+  const ourPrice = (productData.price.replace("£", "") * 0.9).toFixed(2);
+  const scale = productData.scale.replace(":", "/");
   return (
-    <div>
+    <div className="container">
       <img alt="" src={img} width="300px" />
       <br />
-      {productData.brand} {productData.scale + " "} {productData.name}
+      {productData.brand} {scale + " "} {productData.name}
       <br />
       {productData.price} <br />
-      {productData.stock} <br />
+      Our Price: {ourPrice} <br />
+      Stock: {productData.stock} <br />
       {productData.style}
     </div>
   );
