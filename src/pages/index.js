@@ -16,6 +16,9 @@ export default function Home() {
     setLoading(false);
     console.log(product);
   };
+  const loadPage = () => {
+    window.open("https://www.hannants.co.uk/product/" + code, "_blank");
+  };
   return (
     <>
       <NavBar />
@@ -36,8 +39,10 @@ export default function Home() {
           </button>
           {loading && <div>LOADING</div>}
         </div>
-
-        <Product productData={product} />
+        <div className="container">
+          <Product productData={product} />
+          <button onClick={loadPage}>Open in Hannants</button>
+        </div>
       </div>
     </>
   );

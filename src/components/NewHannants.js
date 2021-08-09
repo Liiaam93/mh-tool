@@ -9,7 +9,7 @@ const NewHannants = ({ newProducts }) => {
 
   let newProductMap = newProducts.map((item, index) => (
     <React.Fragment key={index}>
-      <div className="container">
+      <div className="containers">
         <img
           src={item.img.replace("thumbs", "pics")}
           alt=""

@@ -24,6 +24,18 @@ div {
   border: black solid 2px;
   border-radius: 5%;
   margin-top: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: auto;
+  padding: 15px;
+  font-family: monospace;
+}
+.containers {
+  background-color: rgb(151, 151, 151);
+  text-align: center;
+  border: black solid 2px;
+  border-radius: 5%;
+  margin-top: 2px;
   margin-right: auto;
   width: 33%;
   height: auto;
@@ -35,6 +47,7 @@ div {
   font-size: larger;
   text-align: center;
   color: white;
+  z-index: 99;
   margin: auto;
   border: solid black 2px;
   width: 100%;
