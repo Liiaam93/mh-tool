@@ -21,7 +21,7 @@ const NewHannants = ({ newProducts }) => {
           className="newImg"
         />
         <br />
-        {item.name} {item.scale} {item.desc}
+        {item.name} {item.scale} {item.desc.slice(0, 100)}
         <br />
         <p className="det">
           Price: {item.price}

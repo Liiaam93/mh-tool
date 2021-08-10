@@ -37,8 +37,9 @@ export default function About() {
         <div className="buttons">
           Hannants New Arrivals <br />
           <button onClick={prevPage}>Previous</button>
-          <button onClick={nextPage}>Next</button> Page {pageNum}
-          {loading && <div>LOADING</div>}
+          <button onClick={nextPage}>Next</button> <br />
+          Page {pageNum}
+          {loading && <div className="loader">LOADING</div>}
         </div>
         <NewHannants newProducts={products} className="newProducts" />
       </div>

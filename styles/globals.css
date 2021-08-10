@@ -87,3 +87,13 @@ div {
 .det {
   color: rgb(53, 53, 53);
 }
+.loader {
+  color: red;
+}
+button {
+  background-color: yellow;
+}
+.green {
+  font-size: larger;
+  color: green;
+}
