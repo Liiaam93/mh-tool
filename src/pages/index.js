@@ -32,6 +32,7 @@ export default function Home() {
           <input
             value={code}
             id="code"
+            onFocus={(e) => (e.target.value = "")}
             onChange={(e) => setCode(e.target.value)}
           />
           <button onClick={() => loadProduct()} id="pbtn">

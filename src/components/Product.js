@@ -14,7 +14,7 @@ const Product = ({ productData }) => {
   }
   const img = productData.imageSrc;
 
-  const ourPrice = (productData.price.replace("£", "") * 0.9).toFixed(2);
+  let ourPrice = (productData.price.replace("£", "") * 0.9).toFixed(2);
 
   const scale = productData.scale.replace(":", "/");
   return (
@@ -27,21 +27,27 @@ const Product = ({ productData }) => {
       <p className="green">{postage}</p>
       <button
         onClick={() =>
-          setPostage("Price with postage: £" + (parseInt(ourPrice) + 2.46))
+          setPostage(
+            "Price with postage: £" + (Number(ourPrice) + 2.46).toFixed(2)
+          )
         }
       >
         + Postage (£2.46)
       </button>{" "}
       <button
         onClick={() =>
-          setPostage("Price with postage: £" + (parseInt(ourPrice) + 2.75))
+          setPostage(
+            "Price with postage: £" + (Number(ourPrice) + 2.75).toFixed(2)
+          )
         }
       >
         + Postage (£2.75)
       </button>{" "}
       <button
         onClick={() =>
-          setPostage("Price with postage: £" + (parseInt(ourPrice) + 6))
+          setPostage(
+            "Price with postage: £" + (Number(ourPrice) + 6).toFixed(2)
+          )
         }
       >
         + Postage (£6)

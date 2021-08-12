@@ -11,22 +11,22 @@ export const fetchCreative = async (code) => {
     "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(3)"
   )
     .text()
-    .replace(/\n/g, "");
+    .replace(/&nbsp;/g, "");
   const price = $(
     "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(4)"
   )
     .text()
-    .replace(/\n/g, "");
+    .replace(/&nbsp;/g, "");
   const stock = $(
     "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(5)"
   )
     .text()
-    .replace(/\n/g, "");
+    .replace(/&nbsp;/g, "");
   const pCode = $(
     "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(2)"
   )
     .text()
-    .replace(/\n/g, "");
+    .replace(/&nbsp;/g, "");
   const pageSrc = $(
     "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(3) > a"
   ).attr("href");
