@@ -30,6 +30,7 @@ export default function Creative() {
           <input
             value={code}
             id="code"
+            onFocus={(e) => (e.target.value = "")}
             onChange={(e) => setCode(e.target.value)}
           />
           <button onClick={() => loadProduct()} id="pbtn">
@@ -37,9 +38,7 @@ export default function Creative() {
           </button>
           {loading && <div>LOADING</div>}
         </div>
-        <div className="container">
-          <CreativeProduct creativeData={product} />
-        </div>
+        <CreativeProduct creativeData={product} />
       </div>
     </>
   );

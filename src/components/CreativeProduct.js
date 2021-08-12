@@ -18,7 +18,7 @@ const CreativeProduct = ({ creativeData }) => {
   let ourPrice = (creativeData.price.replace("£", "") * 0.9).toFixed(2);
   let name = creativeData.name.replace(/nbsp;/g, "");
   return (
-    <>
+    <div className="container">
       <img alt="" src={creativeData.imgSrc} width="300px" />
       <br />
       Price: {creativeData.price} <br />
@@ -54,12 +54,16 @@ const CreativeProduct = ({ creativeData }) => {
       <br />
       <p>Stock: {creativeData.stock} </p>
       <p>
-        {creativeData.name.replace(/&nbsp;/, "")}#
-        {creativeData.pCode.replace(/&nbsp;/, "")}
+        {creativeData.name
+          .replace("\u00A0\u00A0", "")
+          .replace("\u00A0", "")
+          .replace(":", "/")
+          .replace(" - ", " ")}{" "}
+        # {creativeData.pCode.replace("\u00A0", "")}
         <br />
         <button onClick={loadPage}>Open in Creative</button>
       </p>
-    </>
+    </div>
   );
 };
 export default CreativeProduct;

@@ -18,7 +18,7 @@ const Product = ({ productData }) => {
 
   const scale = productData.scale.replace(":", "/");
   return (
-    <>
+    <div className="container">
       <img alt="" src={img} width="300px" />
       <br />
       Price: {productData.price} <br />
@@ -57,7 +57,7 @@ const Product = ({ productData }) => {
         {productData.brand} {scale + " "} {productData.name}{" "}
       </p>
       <p>Type: {productData.style} </p>
-    </>
+    </div>
   );
 };
 

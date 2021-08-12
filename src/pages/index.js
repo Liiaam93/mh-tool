@@ -40,10 +40,8 @@ export default function Home() {
           </button>
           {loading && <div>LOADING</div>}
         </div>
-        <div className="container">
-          <Product productData={product} />
-          <button onClick={loadPage}>Open in Hannants</button>
-        </div>
+        <Product productData={product} />
+        <button onClick={loadPage}>Open in Hannants</button>
       </div>
     </>
   );
