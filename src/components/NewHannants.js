@@ -11,12 +11,12 @@ const NewHannants = ({ newProducts }) => {
     <React.Fragment key={index}>
       <div className="containers">
         <img
-          src={item.img.replace("thumbs", "pics")}
+          src={item.img.replace("thumbs", "pics") || ""}
           alt=""
           className="newImg"
         />{" "}
         <img
-          src={item.img.replace("thumbs", "pics").replace("jpg", "JPG")}
+          src={item.img.replace("thumbs", "pics").replace("jpg", "JPG") || ""}
           alt=""
           className="newImg"
         />
