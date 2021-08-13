@@ -55,7 +55,9 @@ export const fetchNewHannants = async (page) => {
         .replace(/\n/g, "");
 
       let code = name.split(" ");
-
+      if (scale == "No Scale") {
+        scale = "-";
+      }
       newProducts.push({
         name: name,
         name2: name2,

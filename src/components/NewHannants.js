@@ -17,7 +17,7 @@ const NewHannants = ({ newProducts }) => {
           Open in Hannants
         </button>
         <br />
-        {item.brand} {item.scale} {item.name2.slice(0, 100)}
+        {item.brand} {item.scale} {item.name2.slice(0, 100)}...
         <br />
         <p className="det">
           Price: {item.price}
