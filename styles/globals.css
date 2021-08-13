@@ -66,6 +66,7 @@ div {
   margin: 0px;
   padding: 0%;
   max-width: 80%;
+  max-height: 200px;
 }
 .newProducts {
   display: flex;
@@ -96,4 +97,7 @@ button {
 .green {
   font-size: larger;
   color: green;
+}
+.hlink {
+  color: rgb(255, 230, 0);
 }

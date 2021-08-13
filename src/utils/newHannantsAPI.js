@@ -16,12 +16,9 @@ export const fetchNewHannants = async (page) => {
       let name = $(`#product_listing > tbody > #_${i} > td:nth-child(2) > a`)
         .text()
         .replace(/\n/g, "");
-      let img2 = $(
-        `#product_listing > tbody > #_${i} > td.image_cell > a > img.big-image.loaded`
-      ).attr("src");
-      let img = $(
-        `#product_listing > tbody > #_${i} > td.image_cell > a > img`
-      ).attr("src");
+      let pageSrc = $(
+        `#product_listing > tbody > #_${i} > td:nth-child(2) > a`
+      ).attr("href");
       let desc = $(`#product_listing > tbody > #_${i} > td:nth-child(4)`)
         .text()
         .replace(/\n/g, "");
@@ -30,7 +27,8 @@ export const fetchNewHannants = async (page) => {
         .replace(/\n/g, "");
       let scale = $(`#product_listing > tbody > #_${i} > td:nth-child(3)`)
         .text()
-        .replace(/\n/g, "");
+        .replace(/\n/g, "")
+        .replace(":", "/");
       let arrival = $(`#product_listing > tbody > #_${i} > td:nth-child(7)`)
         .text()
         .replace(/\n/g, "");
@@ -40,16 +38,37 @@ export const fetchNewHannants = async (page) => {
       let type = $(`#product_listing > tbody > #_${i} >  td:nth-child(5)`)
         .text()
         .replace(/\n/g, "");
+
+      pageSrc = "https://www.hannants.co.uk" + pageSrc;
+
+      const req2 = await fetch(pageSrc);
+      const html2 = await req2.text();
+      const $2 = cheerio.load(html2);
+      let imageSrc2 = $2(
+        "#product-main-image .main-image-inner:first-child img"
+      ).attr("src");
+      const name2 = $2("#product-details dd:nth-child(2)")
+        .text()
+        .replace(/\n/g, "");
+      const brand = $2("#product-details dd:nth-child(4)")
+        .text()
+        .replace(/\n/g, "");
+
+      let code = name.split(" ");
+
       newProducts.push({
         name: name,
+        name2: name2,
+        brand: brand,
+        pageSrc: pageSrc,
         scale: scale,
-        img: img,
-        img2: img2,
         desc: desc,
         type: type,
         price: price,
         stock: stock,
         arrival: arrival,
+        imageSrc2: imageSrc2,
+        code: code,
       });
     }
 
