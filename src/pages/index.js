@@ -9,6 +9,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const loadProduct = async () => {
+    setProduct([]);
     setLoading(true);
     const req = await fetch(`/api/id/${code}`);
     const json = await req.json();
