@@ -35,7 +35,7 @@ export default function Home() {
           <input
             value={code}
             id="code"
-            onFocus={(e) => (e.target.value = "")}
+            onDoubleClick={(e) => (e.target.value = "")}
             onChange={(e) => setCode(e.target.value)}
             onKeyPress={handleKeyPress}
           />
