@@ -2,11 +2,16 @@
   "name": "mh-tool",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "7.19.1",
+    "node": "14.17.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+    
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
