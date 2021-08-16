@@ -16,6 +16,12 @@ export default function Home() {
     setLoading(false);
     console.log(product);
   };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      loadProduct();
+    }
+  };
   return (
     <>
       <NavBar />
@@ -31,6 +37,7 @@ export default function Home() {
             id="code"
             onFocus={(e) => (e.target.value = "")}
             onChange={(e) => setCode(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
           <button onClick={() => loadProduct()} id="pbtn">
             Load

@@ -23,7 +23,26 @@ const Product = ({ productData }) => {
   };
 
   let cost;
-  if (productData.brand == "ResKit") {
+  let brand = productData.brand;
+  if (
+    brand === "SBS Model" ||
+    brand === "PJ Productions" ||
+    brand === "Echelon FD" ||
+    brand === "SBS Model" ||
+    brand === "AML" ||
+    brand === "Clear Prop Models" ||
+    brand === "Copper State Models" ||
+    brand === "Merit" ||
+    brand === "FLY" ||
+    brand === "Yahu Models" ||
+    brand === "Infinity Model" ||
+    brand === "Lima November" ||
+    brand === "Peewit" ||
+    brand === "Dead Design Models" ||
+    brand === "HGW" ||
+    brand === "ResKit" ||
+    brand === "I LOVE KIT"
+  ) {
     cost = 1.21;
   } else {
     cost = 0.9;
