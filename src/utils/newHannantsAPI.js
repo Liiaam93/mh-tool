@@ -19,23 +19,22 @@ export const fetchNewHannants = async (page) => {
       let pageSrc = $(
         `#product_listing > tbody > #_${i} > td:nth-child(2) > a`
       ).attr("href");
-      let desc = $(`#product_listing > tbody > #_${i} > td:nth-child(4)`)
+      const price = $(`#product_listing > tbody >#_${i} > td.price.notranslate`)
         .text()
         .replace(/\n/g, "");
-      let price = $(`#product_listing > tbody >#_${i} > td.price.notranslate`)
-        .text()
-        .replace(/\n/g, "");
-      let scale = $(`#product_listing > tbody > #_${i} > td:nth-child(3)`)
+      const scale = $(`#product_listing > tbody > #_${i} > td:nth-child(3)`)
         .text()
         .replace(/\n/g, "")
         .replace(":", "/");
-      let arrival = $(`#product_listing > tbody > #_${i} > td:nth-child(7)`)
+      const arrival = $(`#product_listing > tbody > #_${i} > td:nth-child(7)`)
         .text()
         .replace(/\n/g, "");
-      let stock = $(`#product_listing > tbody > #_${i} > td.stock_level > span`)
+      const stock = $(
+        `#product_listing > tbody > #_${i} > td.stock_level > span`
+      )
         .text()
         .replace(/\n/g, "");
-      let type = $(`#product_listing > tbody > #_${i} >  td:nth-child(5)`)
+      const type = $(`#product_listing > tbody > #_${i} >  td:nth-child(5)`)
         .text()
         .replace(/\n/g, "");
 
@@ -44,7 +43,8 @@ export const fetchNewHannants = async (page) => {
       const req2 = await fetch(pageSrc);
       const html2 = await req2.text();
       const $2 = cheerio.load(html2);
-      let imageSrc2 = $2(
+
+      const imageSrc = $2(
         "#product-main-image .main-image-inner:first-child img"
       ).attr("src");
       const name2 = $2("#product-details dd:nth-child(2)")
@@ -58,19 +58,32 @@ export const fetchNewHannants = async (page) => {
       if (scale == "No Scale") {
         scale = "-";
       }
+
+      /*const newProducts = {
+        name2,
+        name,
+        type,
+        imageSrc,
+        brand,
+        type,
+        stock,
+        price,
+        arrival,
+        pageSrc,
+        code,
+      }; */
       newProducts.push({
-        name: name,
-        name2: name2,
-        brand: brand,
-        pageSrc: pageSrc,
-        scale: scale,
-        desc: desc,
-        type: type,
-        price: price,
-        stock: stock,
-        arrival: arrival,
-        imageSrc2: imageSrc2,
-        code: code,
+        name2,
+        name,
+        type,
+        imageSrc,
+        brand,
+        type,
+        stock,
+        price,
+        arrival,
+        pageSrc,
+        code,
       });
     }
 

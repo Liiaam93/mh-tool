@@ -28,6 +28,9 @@ export const fetchHannants = async (code) => {
     const stock = $("#product-details dd:nth-child(16)")
       .text()
       .replace(/\n/g, "");
+    const pCode = $("#product-details > dl > dd:nth-child(6)")
+      .text()
+      .replace(/\n/g, "");
 
     const productData = {
       imageSrc,
@@ -37,6 +40,7 @@ export const fetchHannants = async (code) => {
       price,
       scale,
       stock,
+      pCode,
     };
 
     return productData;

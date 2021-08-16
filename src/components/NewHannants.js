@@ -11,7 +11,7 @@ const NewHannants = ({ newProducts }) => {
   let newProductMap = newProducts.map((item, index) => (
     <React.Fragment key={index}>
       <div className="containers">
-        <img src={item.imageSrc2} alt="" className="newImg" />
+        <img src={item.imageSrc} alt="" className="newImg" />
         <br />
         <button onClick={() => window.open(item.pageSrc, "_blank")}>
           Open in Hannants

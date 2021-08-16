@@ -12,19 +12,37 @@ const Product = ({ productData }) => {
   if (!productData.imageSrc) {
     return null;
   }
+
   const img = productData.imageSrc;
 
-  let ourPrice = (productData.price.replace("£", "") * 0.9).toFixed(2);
+  const openSite = () => {
+    window.open(
+      "https://www.hannants.co.uk/product/" + productData.pCode,
+      "_blank"
+    );
+  };
+
+  let cost;
+  if (productData.brand == "ResKit") {
+    cost = 1.21;
+  } else {
+    cost = 0.9;
+  }
+  let ourPrice = (productData.price.replace("£", "") * cost).toFixed(2);
 
   const scale = productData.scale.replace(":", "/");
   return (
     <div className="container">
-      <img alt="" src={img} width="300px" />
+      <img alt="" src={img} width="300px" className="pImg" />
       <br />
-      Price: {productData.price} <br />
-      Our Price:
-      <span className="green"> £{ourPrice}</span>
-      <p className="green">{postage}</p>
+      <br />
+      <p>
+        <span className="red">Price:</span> {productData.price}
+      </p>
+      <p>
+        <span className="red">Our Price: </span>£{ourPrice}
+      </p>
+      <p>{postage}</p>
       <button
         onClick={() =>
           setPostage(
@@ -52,11 +70,17 @@ const Product = ({ productData }) => {
       >
         + Postage (£6)
       </button>
-      <p>Stock: {productData.stock} </p>
+      <p>
+        <span className="red">Stock:</span> {productData.stock}{" "}
+      </p>
       <p>
         {productData.brand} {scale + " "} {productData.name}{" "}
       </p>
-      <p>Type: {productData.style} </p>
+      <p>
+        <span className="red">Type: </span>
+        {productData.style}{" "}
+      </p>
+      <button onClick={openSite}>Open in Hannants</button>
     </div>
   );
 };

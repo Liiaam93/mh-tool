@@ -101,3 +101,11 @@ button {
 .hlink {
   color: rgb(255, 230, 0);
 }
+.red {
+  color: rgb(105, 30, 30);
+  font-size: larger;
+}
+.pImg {
+  border: black solid 2px;
+  border-radius: 10px;
+}
