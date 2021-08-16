@@ -58,20 +58,6 @@ export const fetchNewHannants = async (page) => {
       if (scale == "No Scale") {
         scale = "-";
       }
-
-      /*const newProducts = {
-        name2,
-        name,
-        type,
-        imageSrc,
-        brand,
-        type,
-        stock,
-        price,
-        arrival,
-        pageSrc,
-        code,
-      }; */
       newProducts.push({
         name2,
         name,
