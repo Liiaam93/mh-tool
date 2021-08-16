@@ -40,7 +40,12 @@ export default function About() {
           <button onClick={prevPage}>Previous</button>
           <button onClick={nextPage}>Next</button> <br />
           Page {pageNum}
-          {loading && <div className="loader">LOADING</div>}
+          {loading && (
+            <div className="loader">
+              LOADING
+              <p>This may take a minute...</p>
+            </div>
+          )}
         </div>
         <NewHannants newProducts={products} className="newProducts" />
       </div>
