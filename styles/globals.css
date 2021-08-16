@@ -43,7 +43,6 @@ div {
   font-family: monospace;
 }
 .nav {
-  border-radius: 5%;
   font-size: larger;
   text-align: center;
   color: white;
@@ -55,6 +54,9 @@ div {
   padding: 7px;
   position: fixed;
   justify-content: space-between;
+}
+.nav a:hover {
+  color: yellow;
 }
 .buttons {
   text-align: center;
