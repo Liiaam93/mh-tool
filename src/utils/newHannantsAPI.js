@@ -12,7 +12,7 @@ export const fetchNewHannants = async (page) => {
 
     let newProducts = [];
 
-    for (let i = 1; i < 16; i++) {
+    for (let i = 1; i < 21; i++) {
       let name = $(`#product_listing > tbody > #_${i} > td:nth-child(2) > a`)
         .text()
         .replace(/\n/g, "");
@@ -44,7 +44,7 @@ export const fetchNewHannants = async (page) => {
       const html2 = await req2.text();
       const $2 = cheerio.load(html2);
 
-      const imageSrc = $2(
+      let imageSrc = $2(
         "#product-main-image .main-image-inner:first-child img"
       ).attr("src");
       const name2 = $2("#product-details dd:nth-child(2)")
@@ -53,6 +53,9 @@ export const fetchNewHannants = async (page) => {
       const brand = $2("#product-details dd:nth-child(4)")
         .text()
         .replace(/\n/g, "");
+      if (imageSrc == null || imageSrc == "/images/test.gif") {
+        imageSrc = "/ph.jpg";
+      }
 
       let code = name.split(" ");
       if (scale == "No Scale") {

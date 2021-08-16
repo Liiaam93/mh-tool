@@ -8,6 +8,9 @@ const NewHannants = ({ newProducts }) => {
   if (!newProducts) {
     return null;
   }
+  if ((newProducts.imageSrc = "/images/test.gif")) {
+    newProducts.imageSrc = "/ph.jpg";
+  }
   let newProductMap = newProducts.map((item, index) => (
     <React.Fragment key={index}>
       <div className="containers">
