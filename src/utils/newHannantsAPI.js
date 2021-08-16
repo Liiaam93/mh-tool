@@ -19,7 +19,7 @@ export const fetchNewHannants = async (page) => {
       let pageSrc = $(
         `#product_listing > tbody > #_${i} > td:nth-child(2) > a`
       ).attr("href");
-      const price = $(`#product_listing > tbody >#_${i} > td.price.notranslate`)
+      let price = $(`#product_listing > tbody >#_${i} > td.price.notranslate`)
         .text()
         .replace(/\n/g, "");
       const scale = $(`#product_listing > tbody > #_${i} > td:nth-child(3)`)
@@ -39,6 +39,8 @@ export const fetchNewHannants = async (page) => {
         .replace(/\n/g, "");
 
       pageSrc = "https://www.hannants.co.uk" + pageSrc;
+
+      let pricey = price.split("£");
 
       const req2 = await fetch(pageSrc);
       const html2 = await req2.text();
@@ -73,6 +75,7 @@ export const fetchNewHannants = async (page) => {
         arrival,
         pageSrc,
         code,
+        pricey,
       });
     }
 

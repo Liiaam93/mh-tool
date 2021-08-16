@@ -11,6 +11,31 @@ const NewHannants = ({ newProducts }) => {
   if ((newProducts.imageSrc = "/images/test.gif")) {
     newProducts.imageSrc = "/ph.jpg";
   }
+  let cost;
+  let brand = newProducts.brand;
+  if (
+    brand === "SBS Model" ||
+    brand === "PJ Productions" ||
+    brand === "Echelon FD" ||
+    brand === "SBS Model" ||
+    brand === "AML" ||
+    brand === "Clear Prop Models" ||
+    brand === "Copper State Models" ||
+    brand === "Merit" ||
+    brand === "FLY" ||
+    brand === "Yahu Models" ||
+    brand === "Infinity Model" ||
+    brand === "Lima November" ||
+    brand === "Peewit" ||
+    brand === "Dead Design Models" ||
+    brand === "HGW" ||
+    brand === "ResKit" ||
+    brand === "I LOVE KIT"
+  ) {
+    cost = 1.21;
+  } else {
+    cost = 0.9;
+  }
   let newProductMap = newProducts.map((item, index) => (
     <React.Fragment key={index}>
       <div className="containers">
@@ -23,9 +48,9 @@ const NewHannants = ({ newProducts }) => {
         {item.brand} {item.scale} {item.name2.slice(0, 100)}...
         <br />
         <p className="det">
-          Price: {item.price}
+          Price: {item.pricey[1]}
           <br />
-          Our Price: {(item.price.replace("£", "") * 0.9).toFixed(2)}
+          Our Price: {(item.pricey[1] * cost).toFixed(2)}
           <br />
           Stock: {item.stock}
           <br />

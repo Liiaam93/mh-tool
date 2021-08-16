@@ -13,6 +13,7 @@ export default function About() {
 
   useEffect(() => {
     const loadNewProducts = async () => {
+      setProducts([]);
       setLoading(true);
       const req = await fetch(`/api/nhan/${pageNum}`);
       const json = await req.json();
