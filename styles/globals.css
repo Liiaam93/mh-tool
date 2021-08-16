@@ -62,7 +62,8 @@ div {
   padding: 10px;
 }
 .newImg {
-  border: solid black 1px;
+  border: solid black 2px;
+  border-radius: 10px;
   margin: 0px;
   padding: 0%;
   max-width: 80%;
