@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Product from "../components/Product";
 import React, { useState } from "react";
 import NavBar from "../components/Nav";
 import CreativeProduct from "../components/CreativeProduct";
@@ -17,6 +16,12 @@ export default function Creative() {
     setLoading(false);
     console.log(product);
   };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      loadProduct();
+    }
+  };
   return (
     <>
       <NavBar />
@@ -30,8 +35,9 @@ export default function Creative() {
           <input
             value={code}
             id="code"
-            onFocus={(e) => (e.target.value = "")}
+            onDoubleClick={(e) => (e.target.value = "")}
             onChange={(e) => setCode(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
           <button onClick={() => loadProduct()} id="pbtn">
             Load
