@@ -35,9 +35,9 @@ div {
   text-align: center;
   border: black solid 2px;
   border-radius: 10px;
-  margin-top: 2px;
+  margin-top: 13px;
   margin-right: auto;
-  width: 48%;
+  width: 49%;
   height: auto;
   padding: 15px;
   font-family: monospace;
@@ -92,7 +92,7 @@ div {
   color: rgb(53, 53, 53);
 }
 .loader {
-  color: yellow;
+  color: rgb(112, 5, 5);
 }
 button {
   background-color: yellow;
@@ -111,4 +111,24 @@ button {
 .pImg {
   border: black solid 2px;
   border-radius: 10px;
+}
+.smaller {
+  font-size: smaller;
+}
+@keyframes loader {
+  0% {
+    color: red;
+  }
+  50% {
+    color: rgb(255, 255, 255);
+  }
+  100% {
+    color: red;
+  }
+}
+
+.anim {
+  animation-name: loader;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }

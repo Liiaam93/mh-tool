@@ -42,8 +42,8 @@ export default function About() {
           Page {pageNum}
           {loading && (
             <div className="loader">
-              LOADING
-              <p>This may take a minute...</p>
+              <span className="anim">LOADING</span>
+              <p className="smaller">This may take a minute...</p>
             </div>
           )}
         </div>

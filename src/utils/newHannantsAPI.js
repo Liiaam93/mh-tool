@@ -12,7 +12,7 @@ export const fetchNewHannants = async (page) => {
 
     let newProducts = [];
 
-    for (let i = 1; i < 21; i++) {
+    for (let i = 1; i < 26; i++) {
       let name = $(`#product_listing > tbody > #_${i} > td:nth-child(2) > a`)
         .text()
         .replace(/\n/g, "");
