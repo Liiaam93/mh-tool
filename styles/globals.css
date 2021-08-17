@@ -43,7 +43,6 @@ div {
   font-family: monospace;
 }
 .nav {
-  font-size: larger;
   text-align: center;
   color: white;
   z-index: 99;
@@ -131,4 +130,25 @@ button {
   animation-name: loader;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+}
+.table,
+td,
+th {
+  text-align: center;
+  border: solid 2px black;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: red;
+}
+td {
+  background-color: cadetblue;
+}
+td:hover {
+  background-color: yellow;
+}
+td:nth-child(3) {
+  width: 30%;
 }
