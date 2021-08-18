@@ -12,7 +12,9 @@ const NewHannants = ({ newProducts }) => {
     newProducts.imageSrc = "/ph.jpg";
   }
   let cost;
+
   let brand = newProducts.brand;
+
   if (
     brand === "SBS Model" ||
     brand === "PJ Productions" ||

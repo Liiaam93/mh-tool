@@ -60,12 +60,12 @@ export const fetchNewHannants = async (page) => {
       }
 
       let code = name.split(" ");
+
       if (scale == "No Scale") {
         scale = "-";
       }
       newProducts.push({
         name2,
-        name,
         type,
         imageSrc,
         brand,
