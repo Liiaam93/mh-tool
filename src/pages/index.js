@@ -2,13 +2,17 @@ import Head from "next/head";
 import Product from "../components/Product";
 import React, { useState } from "react";
 import NavBar from "../components/Nav";
+import { useRecoilState } from "recoil";
+import { post } from "../components/Product";
 
 export default function Home() {
+  const [postage, setPostage] = useRecoilState(post);
   const [code, setCode] = useState("Enter a Product Code");
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const loadProduct = async () => {
+    setPostage("");
     setProduct([]);
     setLoading(true);
     const req = await fetch(`/api/id/${code}`);

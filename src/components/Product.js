@@ -2,9 +2,14 @@
 import React from "react";
 import Image from "next/image";
 import { useState } from "react";
+import { atom, useRecoilState } from "recoil";
 
+export const post = atom({
+  key: "post",
+  default: "",
+});
 const Product = ({ productData }) => {
-  const [postage, setPostage] = useState();
+  const [postage, setPostage] = useRecoilState(post);
 
   if (!productData) {
     return null;
