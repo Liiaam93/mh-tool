@@ -33,7 +33,6 @@ const Product = ({ productData }) => {
     brand === "SBS Model" ||
     brand === "PJ Productions" ||
     brand === "Echelon FD" ||
-    brand === "SBS Model" ||
     brand === "AML" ||
     brand === "Clear Prop Models" ||
     brand === "Copper State Models" ||
