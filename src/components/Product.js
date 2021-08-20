@@ -17,8 +17,7 @@ const Product = ({ productData }) => {
   if (!productData.imageSrc) {
     return null;
   }
-
-  const img = productData.imageSrc;
+  let img = productData.imageSrc;
 
   const openSite = () => {
     window.open(
@@ -57,7 +56,23 @@ const Product = ({ productData }) => {
   const scale = productData.scale.replace(":", "/");
   return (
     <div className="container">
-      <img alt="" src={img} width="300px" className="pImg" />
+      <img alt="" src={img} width="300px" className="pImg" /> {""}
+      {productData.imageSrc2 && (
+        <img
+          alt=""
+          src={productData.imageSrc2}
+          width="100px"
+          className="pImg"
+        />
+      )}{" "}
+      {productData.imageSrc3 && (
+        <img
+          alt=""
+          src={productData.imageSrc3}
+          width="100px"
+          className="pImg"
+        />
+      )}
       <br />
       <br />
       <p>

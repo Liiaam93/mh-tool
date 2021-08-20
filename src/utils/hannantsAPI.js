@@ -9,7 +9,12 @@ export const fetchHannants = async (code) => {
     const imageSrc = $(
       "#product-main-image .main-image-inner:first-child img"
     ).attr("src");
-
+    const imageSrc2 = $("#product-thumbs-list > li:nth-child(2) > a").attr(
+      "href"
+    );
+    const imageSrc3 = $("#product-thumbs-list > li:nth-child(3) > a").attr(
+      "href"
+    );
     const name = $("#product-details dd:nth-child(2)")
       .text()
       .replace(/\n/g, "");
@@ -41,6 +46,8 @@ export const fetchHannants = async (code) => {
       scale,
       stock,
       pCode,
+      imageSrc2,
+      imageSrc3,
     };
 
     return productData;
