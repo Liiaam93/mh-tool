@@ -32,7 +32,8 @@ const NewHannants = ({ newProducts }) => {
     brand === "Dead Design Models" ||
     brand === "HGW" ||
     brand === "ResKit" ||
-    brand === "I LOVE KIT"
+    brand === "I LOVE KIT" ||
+    brand === "Milspec"
   ) {
     cost = 1.21;
   } else {
