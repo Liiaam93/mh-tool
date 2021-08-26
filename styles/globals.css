@@ -99,6 +99,7 @@ div {
 }
 button {
   background-color: yellow;
+  border: black 2px solid;
 }
 .green {
   font-size: larger;
@@ -155,4 +156,17 @@ td:hover {
 }
 td:nth-child(3) {
   width: 30%;
+}
+.collapse-button {
+  display: block;
+  margin: auto;
+  width: 40%;
+}
+
+.collapse-content.collapsed {
+  display: none;
+}
+
+.collapsed-content.expanded {
+  display: block;
 }

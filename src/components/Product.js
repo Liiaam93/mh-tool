@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { atom, useRecoilState } from "recoil";
+import Collapse from "./Collapse";
 
 export const post = atom({
   key: "post",
@@ -10,6 +11,7 @@ export const post = atom({
 });
 const Product = ({ productData }) => {
   const [postage, setPostage] = useRecoilState(post);
+  const [imageSRC, setImage] = useState(productData.imageSrc);
 
   if (!productData) {
     return null;
@@ -26,66 +28,48 @@ const Product = ({ productData }) => {
     );
   };
 
-  let cost;
-  let brand = productData.brand;
-  if (
-    brand === "SBS Model" ||
-    brand === "PJ Productions" ||
-    brand === "Echelon FD" ||
-    brand === "AML" ||
-    brand === "Clear Prop Models" ||
-    brand === "Copper State Models" ||
-    brand === "Merit" ||
-    brand === "FLY" ||
-    brand === "Yahu Models" ||
-    brand === "Infinity Model" ||
-    brand === "Lima November" ||
-    brand === "Peewit" ||
-    brand === "Dead Design Models" ||
-    brand === "HGW" ||
-    brand === "ResKit" ||
-    brand === "I LOVE KIT" ||
-    brand === "Milspec"
-  ) {
-    cost = 1.21;
-  } else {
-    cost = 0.9;
-  }
-  let ourPrice = (productData.price.replace("£", "") * cost).toFixed(2);
-
   const scale = productData.scale.replace(":", "/");
   return (
     <div className="container">
       <img alt="" src={img} width="300px" className="pImg" /> {""}
-      {productData.imageSrc2 && (
-        <img
-          alt=""
-          src={productData.imageSrc2}
-          width="100px"
-          className="pImg"
-        />
-      )}{" "}
-      {productData.imageSrc3 && (
-        <img
-          alt=""
-          src={productData.imageSrc3}
-          width="100px"
-          className="pImg"
-        />
-      )}
-      <br />
-      <br />
+      <Collapse>
+        {productData.imageSrc2 && (
+          <img
+            alt=""
+            src={productData.imageSrc2}
+            width="300px"
+            className="pImg"
+          />
+        )}{" "}
+        {productData.imageSrc3 && (
+          <img
+            alt=""
+            src={productData.imageSrc3}
+            width="300px"
+            className="pImg"
+          />
+        )}{" "}
+        {productData.imageSrc4 && (
+          <img
+            alt=""
+            src={productData.imageSrc4}
+            width="300px"
+            className="pImg"
+          />
+        )}
+      </Collapse>{" "}
       <p>
         <span className="red">Price:</span> {productData.price}
       </p>
       <p>
-        <span className="red">Our Price: </span>£{ourPrice}
+        <span className="red">Our Price: </span>£{productData.ourPrice}
       </p>
       <p>{postage}</p>
       <button
         onClick={() =>
           setPostage(
-            "Price with postage: £" + (Number(ourPrice) + 2.46).toFixed(2)
+            "Price with postage: £" +
+              (Number(productData.ourPrice) + 2.46).toFixed(2)
           )
         }
       >
@@ -94,7 +78,8 @@ const Product = ({ productData }) => {
       <button
         onClick={() =>
           setPostage(
-            "Price with postage: £" + (Number(ourPrice) + 2.75).toFixed(2)
+            "Price with postage: £" +
+              (Number(productData.ourPrice) + 2.75).toFixed(2)
           )
         }
       >
@@ -103,7 +88,8 @@ const Product = ({ productData }) => {
       <button
         onClick={() =>
           setPostage(
-            "Price with postage: £" + (Number(ourPrice) + 6).toFixed(2)
+            "Price with postage: £" +
+              (Number(productData.ourPrice) + 6).toFixed(2)
           )
         }
       >

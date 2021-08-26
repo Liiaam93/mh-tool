@@ -15,6 +15,9 @@ export const fetchHannants = async (code) => {
     const imageSrc3 = $("#product-thumbs-list > li:nth-child(3) > a").attr(
       "href"
     );
+    const imageSrc4 = $("#product-thumbs-list > li:nth-child(4) > a").attr(
+      "href"
+    );
     const name = $("#product-details dd:nth-child(2)")
       .text()
       .replace(/\n/g, "");
@@ -37,6 +40,38 @@ export const fetchHannants = async (code) => {
       .text()
       .replace(/\n/g, "");
 
+    let expensive = [
+      "SBS Model",
+      "PJ Productions",
+      "Echelon FD",
+      "AML",
+      "Hobby 2000",
+      "Clear Prop Models",
+      "Copper State Models",
+      "Merit",
+      "FLY",
+      "Yahu Models",
+      "Infinity Model",
+      "Lima November",
+      "Peewit",
+      "Dead Design Models",
+      "HGW",
+      "ResKit",
+      "I LOVE KIT",
+      "Milspec",
+    ];
+    let cheap = ["Dragon", "Zvezda"];
+    let cost;
+
+    if (expensive.includes(brand)) {
+      cost = 1.21;
+    } else if (cheap.includes(brand)) {
+      cost = 0.8;
+    } else {
+      cost = 0.9;
+    }
+
+    let ourPrice = (price.replace("£", "") * cost).toFixed(2);
     const productData = {
       imageSrc,
       name,
@@ -48,6 +83,8 @@ export const fetchHannants = async (code) => {
       pCode,
       imageSrc2,
       imageSrc3,
+      imageSrc4,
+      ourPrice,
     };
 
     return productData;
