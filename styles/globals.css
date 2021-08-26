@@ -99,7 +99,12 @@ div {
 }
 button {
   background-color: yellow;
-  border: black 2px solid;
+  border-radius: 8px;
+  border: black 1px solid;
+  float: initial;
+}
+button:hover {
+  background-color: darkorange;
 }
 .green {
   font-size: larger;
@@ -160,7 +165,7 @@ td:nth-child(3) {
 .collapse-button {
   display: block;
   margin: auto;
-  width: 40%;
+  width: 200px;
 }
 
 .collapse-content.collapsed {
