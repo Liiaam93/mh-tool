@@ -57,6 +57,7 @@ export const fetchHannants = async (code) => {
       "Dead Design Models",
       "HGW",
       "ResKit",
+      "Armory",
       "I LOVE KIT",
       "Milspec",
     ];
