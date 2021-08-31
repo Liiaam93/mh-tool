@@ -11,34 +11,7 @@ const NewHannants = ({ newProducts }) => {
   if ((newProducts.imageSrc = "/images/test.gif")) {
     newProducts.imageSrc = "/ph.jpg";
   }
-  let cost;
 
-  let brand = newProducts.brand;
-
-  if (
-    brand === "SBS Model" ||
-    brand === "PJ Productions" ||
-    brand === "Echelon FD" ||
-    brand === "SBS Model" ||
-    brand === "AML" ||
-    brand === "Clear Prop Models" ||
-    brand === "Copper State Models" ||
-    brand === "Merit" ||
-    brand === "FLY" ||
-    brand === "Yahu Models" ||
-    brand === "Infinity Model" ||
-    brand === "Lima November" ||
-    brand === "Peewit" ||
-    brand === "Dead Design Models" ||
-    brand === "HGW" ||
-    brand === "ResKit" ||
-    brand === "I LOVE KIT" ||
-    brand === "Milspec"
-  ) {
-    cost = 1.21;
-  } else {
-    cost = 0.9;
-  }
   let newProductMap = newProducts.map((item, index) => (
     <React.Fragment key={index}>
       <div className="containers">
@@ -48,12 +21,12 @@ const NewHannants = ({ newProducts }) => {
           Open in Hannants
         </button>
         <br />
-        {item.brand} {item.scale} {item.name2.slice(0, 100)}...
+        {item.brand} {item.scale} {item.name.slice(0, 100)}...
         <br />
         <p className="det">
           Price: {item.pricey[1]}
           <br />
-          Our Price: {(item.pricey[1] * cost).toFixed(2)}
+          Our Price: {item.ourPrice}
           <br />
           Stock: {item.stock}
           <br />
@@ -61,7 +34,7 @@ const NewHannants = ({ newProducts }) => {
           <br />
           Type: {item.type}
           <br />
-          Product Code: {item.code[item.code.length - 2]}
+          Product Code: {item.code[item.code.length - 1]}
         </p>
       </div>
       <br />
