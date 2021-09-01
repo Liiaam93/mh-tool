@@ -6,10 +6,18 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav">
-        <Link href="/">Hannants</Link>
-        <Link href="/about">New Hannants</Link>
-        <Link href="/creative">Creative</Link>
-        <Link href="/price-info">Product-Info</Link>
+        <Link href="/" className="start-home">
+          Hannants
+        </Link>
+        <Link href="/about" className="start-about">
+          New Hannants
+        </Link>
+        <Link href="/creative" className="start-create">
+          Creative
+        </Link>
+        <Link href="/price-info" className="start-info">
+          Product-Info
+        </Link>
         <div className="animation start-home"></div>
       </nav>
       <br />
