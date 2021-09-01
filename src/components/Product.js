@@ -103,7 +103,7 @@ const Product = ({ productData }) => {
       </p>
       <p>
         <span className="red">Type: </span>
-        {productData.style}{" "}
+        {productData.style} ({scale})
       </p>
       <button onClick={openSite}>Open in Hannants</button>
     </div>
