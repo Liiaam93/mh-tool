@@ -224,3 +224,6 @@ td:nth-child(3) {
 .collapsed-content.expanded {
   display: block;
 }
+#newTitle {
+  color: rgb(53, 53, 53);
+}

@@ -36,10 +36,10 @@ export default function About() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <div className="buttons">
-          Hannants New Arrivals <br />
-          <button onClick={prevPage}>Previous</button>
+          <span id="newTitle">Hannants New Arrivals </span>
+          <br />
+          <button onClick={prevPage}>Prev</button> Page {pageNum}{" "}
           <button onClick={nextPage}>Next</button> <br />
-          Page {pageNum}
           {loading && (
             <div className="loader">
               <span className="anim">LOADING</span>
