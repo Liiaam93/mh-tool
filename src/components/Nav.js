@@ -6,21 +6,11 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav">
-        <li>
-          <Link href="/">Hannants</Link>
-        </li>{" "}
-        &nbsp; &nbsp;
-        <li>
-          <Link href="/about">New Hannants</Link>
-        </li>{" "}
-        &nbsp; &nbsp;
-        <li>
-          <Link href="/creative">Creative</Link>
-        </li>{" "}
-        &nbsp; &nbsp;
-        <li>
-          <Link href="/price-info">Product-Info</Link>
-        </li>
+        <Link href="/">Hannants</Link>
+        <Link href="/about">New Hannants</Link>
+        <Link href="/creative">Creative</Link>
+        <Link href="/price-info">Product-Info</Link>
+        <div className="animation start-home"></div>
       </nav>
       <br />
       <br />
