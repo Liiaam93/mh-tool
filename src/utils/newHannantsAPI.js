@@ -10,7 +10,6 @@ export const fetchNewHannants = async (page) => {
     const html = await req.text();
     const $ = cheerio.load(html);
 
-    let newProducts = [];
     const pageSrcs = [];
 
     for (let i = 1; i < 26; i++) {
@@ -22,7 +21,7 @@ export const fetchNewHannants = async (page) => {
       pageSrcs.push(pageSrc);
     }
 
-    await Promise.all(
+    const newProducts = await Promise.all(
       pageSrcs.map((pageSrc) =>
         fetch(pageSrc)
           .then((res) => res.text())
@@ -93,7 +92,7 @@ export const fetchNewHannants = async (page) => {
 
             let ourPrice = (price.replace("£", "") * cost).toFixed(2);
 
-            newProducts.push({
+            return {
               name,
               imageSrc,
               brand,
@@ -106,7 +105,7 @@ export const fetchNewHannants = async (page) => {
               type,
               ourPrice,
               scale,
-            });
+            };
           })
       )
     );
