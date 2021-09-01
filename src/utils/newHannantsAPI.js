@@ -61,11 +61,21 @@ export const fetchNewHannants = async (page) => {
 
             let expensive = [
               "SBS Model",
+              "Modelsvit",
               "PJ Productions",
+              "Star Decals",
               "Echelon FD",
               "AML",
+              "Mac Distribution",
+              "A & A Model",
+              "Bronco",
+              "Metallic Details",
+              "Micro-Mir",
+              "DK Decals",
+              "AVI Models",
               "Hobby 2000",
               "Clear Prop Models",
+              "Model Maker Decals",
               "Copper State Models",
               "Merit",
               "FLY",
@@ -74,11 +84,14 @@ export const fetchNewHannants = async (page) => {
               "Lima November",
               "Peewit",
               "Dead Design Models",
+              "Das Werk",
               "HGW",
+              "TopNotch",
               "ResKit",
               "Armory",
               "I LOVE KIT",
               "Milspec",
+              "Begemot",
             ];
             let cheap = ["Dragon", "Zvezda"];
             let cost;
@@ -88,6 +101,10 @@ export const fetchNewHannants = async (page) => {
               cost = 0.8;
             } else {
               cost = 0.9;
+            }
+
+            if (imageSrc == "/images/test.gif") {
+              imageSrc = "/ph.jpg";
             }
 
             let ourPrice = (price.replace("£", "") * cost).toFixed(2);

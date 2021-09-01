@@ -42,11 +42,21 @@ export const fetchHannants = async (code) => {
 
     let expensive = [
       "SBS Model",
+      "Modelsvit",
       "PJ Productions",
+      "Star Decals",
       "Echelon FD",
       "AML",
+      "Mac Distribution",
+      "A & A Model",
+      "Bronco",
+      "Metallic Details",
+      "Micro-Mir",
+      "DK Decals",
+      "AVI Models",
       "Hobby 2000",
       "Clear Prop Models",
+      "Model Maker Decals",
       "Copper State Models",
       "Merit",
       "FLY",
@@ -55,11 +65,14 @@ export const fetchHannants = async (code) => {
       "Lima November",
       "Peewit",
       "Dead Design Models",
+      "Das Werk",
       "HGW",
+      "TopNotch",
       "ResKit",
       "Armory",
       "I LOVE KIT",
       "Milspec",
+      "Begemot",
     ];
     let cheap = ["Dragon", "Zvezda"];
     let cost;

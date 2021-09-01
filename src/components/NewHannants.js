@@ -1,17 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 const NewHannants = ({ newProducts }) => {
   // {newProducts} is the component prop from /about.js
   if (!newProducts) {
     return null;
   }
-  if ((newProducts.imageSrc = "/images/test.gif")) {
-    newProducts.imageSrc = "/ph.jpg";
-  }
-
   let newProductMap = newProducts.map((item, index) => (
     <React.Fragment key={index}>
       <div className="containers">

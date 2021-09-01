@@ -43,7 +43,6 @@ export default function About() {
           {loading && (
             <div className="loader">
               <span className="anim">LOADING</span>
-              <p className="smaller">This may take a minute...</p>
             </div>
           )}
         </div>
