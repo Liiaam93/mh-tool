@@ -70,6 +70,7 @@ export const fetchNewHannants = async (page) => {
               "A & A Model",
               "Bronco",
               "Metallic Details",
+              "Art Scale",
               "Micro-Mir",
               "DK Decals",
               "AVI Models",

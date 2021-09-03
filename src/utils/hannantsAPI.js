@@ -48,6 +48,7 @@ export const fetchHannants = async (code) => {
       "Echelon FD",
       "AML",
       "Mac Distribution",
+      "Art Scale",
       "A & A Model",
       "Bronco",
       "Metallic Details",

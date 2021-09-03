@@ -184,6 +184,12 @@ const Prices = () => {
             <td>0.9</td>
           </tr>
           <tr>
+            <td>Art Scale</td>
+            <td>ARL</td>
+            <td>Hannants</td>
+            <td>1.21</td>
+          </tr>
+          <tr>
             <td>Attack</td>
             <td>ATT</td>
             <td>Hannants</td>
