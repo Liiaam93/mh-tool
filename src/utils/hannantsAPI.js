@@ -30,15 +30,17 @@ export const fetchHannants = async (code) => {
     const price = $("#product-details dd:nth-child(12)")
       .text()
       .replace(/\n/g, "");
-    const scale = $("#product-details dd:nth-child(8)")
-      .text()
-      .replace(/\n/g, "");
+    let scale = $("#product-details dd:nth-child(8)").text().replace(/\n/g, "");
     const stock = $("#product-details dd:nth-child(16)")
       .text()
       .replace(/\n/g, "");
     const pCode = $("#product-details > dl > dd:nth-child(6)")
       .text()
       .replace(/\n/g, "");
+
+    if (scale == "No Scale") {
+      scale = "-";
+    }
 
     let expensive = [
       "SBS Model",
