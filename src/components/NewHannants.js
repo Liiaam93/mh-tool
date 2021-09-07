@@ -30,7 +30,7 @@ const NewHannants = ({ newProducts }) => {
         </button>
         <br />
         {item.brand} {item.scale} {item.name.slice(0, 100)}{" "}
-        {extraInfo && item.name.slice(101, 500)}
+        {extraInfo && item.name.slice(100, 500)}
         <button onClick={() => toggleInfo()}>...</button>
         <br />
         <p className="det">
