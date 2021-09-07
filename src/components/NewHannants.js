@@ -7,6 +7,16 @@ import { atom, useRecoilState } from "recoil";
 const NewHannants = ({ newProducts }) => {
   // {newProducts} is the component prop from /about.js
 
+  const [extraInfo, setExtraInfo] = useState(false);
+
+  const toggleInfo = () => {
+    if (!extraInfo) {
+      setExtraInfo(true);
+    } else if (extraInfo) {
+      setExtraInfo(false);
+    }
+  };
+
   if (!newProducts) {
     return null;
   }
@@ -19,7 +29,9 @@ const NewHannants = ({ newProducts }) => {
           Open in Hannants
         </button>
         <br />
-        {item.brand} {item.scale} {item.name.slice(0, 100)}...
+        {item.brand} {item.scale} {item.name.slice(0, 100)}{" "}
+        {extraInfo && item.name.slice(101, 500)}
+        <button onClick={() => toggleInfo()}>...</button>
         <br />
         <p className="det">
           Price: {item.pricey[1]}
