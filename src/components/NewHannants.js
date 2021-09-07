@@ -4,13 +4,8 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { atom, useRecoilState } from "recoil";
 
-import { page } from "../pages/about";
-
 const NewHannants = ({ newProducts }) => {
   // {newProducts} is the component prop from /about.js
-  const [pageNum, setPage] = useRecoilState(page);
-  const nextPage = () => setPage(pageNum + 1);
-  const prevPage = () => setPage(pageNum - 1 || 1);
 
   if (!newProducts) {
     return null;
@@ -46,10 +41,6 @@ const NewHannants = ({ newProducts }) => {
   return (
     <>
       <div className="flex">{newProductMap}</div>
-      <div className="buttons">
-        <button onClick={prevPage}>Prev</button> Page {pageNum}{" "}
-        <button onClick={nextPage}>Next</button>
-      </div>
     </>
   );
 };

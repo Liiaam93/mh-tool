@@ -2,15 +2,9 @@ import NavBar from "../components/Nav";
 import Head from "next/head";
 import NewHannants from "../components/NewHannants";
 import React, { useState, useEffect } from "react";
-import { atom, useRecoilState } from "recoil";
-
-export const page = atom({
-  key: "page",
-  default: 1,
-});
 
 export default function About() {
-  const [pageNum, setPage] = useRecoilState(page);
+  const [pageNum, setPage] = useState(1);
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -54,6 +48,14 @@ export default function About() {
           )}
         </div>
         <NewHannants newProducts={products} className="newProducts" />
+        {!loading && (
+          <>
+            <div className="buttons">
+              <button onClick={prevPage}>Prev</button> Page {pageNum}{" "}
+              <button onClick={nextPage}>Next</button>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
