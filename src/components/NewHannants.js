@@ -29,7 +29,7 @@ const NewHannants = ({ newProducts }) => {
           Open in Hannants
         </button>
         <br />
-        {item.brand} {item.scale} {item.name.slice(0, 100)}{" "}
+        {item.brand} {item.scale} {item.name.slice(0, 100)}
         {extraInfo && item.name.slice(100, 500)}
         <button onClick={() => toggleInfo()}>...</button>
         <br />
