@@ -18,9 +18,7 @@ export const fetchHannants = async (code) => {
     const imageSrc4 = $("#product-thumbs-list > li:nth-child(4) > a").attr(
       "href"
     );
-    const name = $("#product-details dd:nth-child(2)")
-      .text()
-      .replace(/\n/g, "");
+    let name = $("#product-details dd:nth-child(2)").text().replace(/\n/g, "");
     const brand = $("#product-details dd:nth-child(4)")
       .text()
       .replace(/\n/g, "");
@@ -92,6 +90,10 @@ export const fetchHannants = async (code) => {
 
     if (price.length > 8) {
       ourPrice += "\n [ITEM IS SPECIAL OFFER... price may be inaccurate!]";
+    }
+
+    if (name.includes("(designed")) {
+      name = name.replace("(designed", "- Designed").replace("kits)", "kits");
     }
     const productData = {
       imageSrc,

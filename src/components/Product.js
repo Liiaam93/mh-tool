@@ -98,7 +98,11 @@ const Product = ({ productData }) => {
       <p>
         <span className="red">Stock:</span> {productData.stock}{" "}
       </p>
-      <p>
+      <p
+        style={{
+          fontSize: "18px",
+        }}
+      >
         {productData.brand} {scale + " "} {productData.name}{" "}
       </p>
       <p>

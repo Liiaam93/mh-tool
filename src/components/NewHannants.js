@@ -34,10 +34,10 @@ const NewHannants = ({ newProducts }) => {
         <button onClick={() => toggleInfo()}>...</button>
         <br />
         <p className="det">
-          Price: {item.pricey[1]}
+          Price: £{item.pricey[1]}
           <span style={{ color: "darkred" }}>{item.offer}</span>
           <br />
-          Our Price: {item.ourPrice}
+          Our Price: £{item.ourPrice}
           <br />
           Stock: {item.stock}
           <br />

@@ -38,7 +38,7 @@ export const fetchNewHannants = async (page) => {
             const arrival = $2(
               "#product-details > dl > dd:nth-child(20)"
             ).text();
-            const name = $2("#product-details dd:nth-child(2)")
+            let name = $2("#product-details dd:nth-child(2)")
               .text()
               .replace(/\n/g, "");
             const stock = $2("#product-details dd:nth-child(16)")
@@ -116,6 +116,9 @@ export const fetchNewHannants = async (page) => {
               offer = "[Special offer, may be inaccurate]";
             } else {
               offer = "";
+            }
+            if (name.includes("designed")) {
+              name.replace("designed", "Designed");
             }
             return {
               name,
