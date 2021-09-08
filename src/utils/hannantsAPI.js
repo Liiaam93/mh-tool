@@ -88,7 +88,11 @@ export const fetchHannants = async (code) => {
       cost = 0.9;
     }
 
-    let ourPrice = (price.replace("£", "") * cost).toFixed(2);
+    let ourPrice = (price.slice(0, 7).replace("£", "") * cost).toFixed(2);
+
+    if (price.length > 8) {
+      ourPrice += "\n [ITEM IS SPECIAL OFFER... price may be inaccurate!]";
+    }
     const productData = {
       imageSrc,
       name,

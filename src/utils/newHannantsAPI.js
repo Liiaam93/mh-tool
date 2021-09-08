@@ -32,7 +32,7 @@ export const fetchNewHannants = async (page) => {
               "#product-main-image .main-image-inner:first-child img"
             ).attr("src");
             const brand = $2("#product-details dd:nth-child(4)").text();
-            const price = $2("#product-details dd:nth-child(12)")
+            let price = $2("#product-details dd:nth-child(12)")
               .text()
               .replace(/\n/g, "");
             const arrival = $2(
@@ -108,13 +108,21 @@ export const fetchNewHannants = async (page) => {
               imageSrc = "/ph.jpg";
             }
 
-            let ourPrice = (price.replace("£", "") * cost).toFixed(2);
-
+            let ourPrice = (price.slice(0, 7).replace("£", "") * cost).toFixed(
+              2
+            );
+            let offer;
+            if (price.length > 8) {
+              offer = "[Special offer, may be inaccurate]";
+            } else {
+              offer = "";
+            }
             return {
               name,
               imageSrc,
               brand,
               price,
+              offer,
               pageSrc,
               stock,
               pricey,
