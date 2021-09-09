@@ -59,10 +59,14 @@ const Product = ({ productData }) => {
         )}
       </Collapse>{" "}
       <p>
-        <span className="red">Price:</span> {productData.price.slice(0, 7)}
+        <span className="red">Price:</span> {productData.price.slice(0, 6)}
         <br />
-        {productData.offer && <span className="red">Special Offer: </span>}
-        {productData.offer && productData.price.slice(7, 14)}
+        {productData.offer && (
+          <>
+            <span className="red">Special Offer: </span>
+          </>
+        )}
+        {productData.offer && productData.oPrice}
       </p>{" "}
       <p>
         {" "}
