@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 const NewHannants = ({ newProducts }) => {
-  // {newProducts} is the component prop from /about.js
+  // {newProducts} is the component property we passed from /about.js
 
   const [extraInfo, setExtraInfo] = useState(false);
 
