@@ -59,9 +59,15 @@ const Product = ({ productData }) => {
         )}
       </Collapse>{" "}
       <p>
-        <span className="red">Price:</span> {productData.price}
-      </p>
+        <span className="red">Price:</span> {productData.price.slice(0, 7)}
+        <br />
+        {productData.offer && <span className="red">Special Offer: </span>}
+        {productData.offer && productData.price.slice(7, 14)}
+      </p>{" "}
       <p>
+        {" "}
+        <span style={{ color: "darkred" }}>{productData.offer}</span>
+        <br />
         <span className="red">Our Price: </span>£{productData.ourPrice}
       </p>
       <p>{postage}</p>

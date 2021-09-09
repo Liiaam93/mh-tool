@@ -113,9 +113,8 @@ export const fetchNewHannants = async (page) => {
             );
             let offer;
             if (price.length > 8) {
-              offer = "[Special offer, may be inaccurate]";
-            } else {
-              offer = "";
+              offer =
+                " [ITEM IS SPECIAL OFFER... our price may be inaccurate!]";
             }
             if (name.includes("designed")) {
               name.replace("designed", "Designed");

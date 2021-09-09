@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { atom, useRecoilState } from "recoil";
 
 const NewHannants = ({ newProducts }) => {
   // {newProducts} is the component prop from /about.js
@@ -35,7 +32,14 @@ const NewHannants = ({ newProducts }) => {
         <br />
         <p className="det">
           Price: £{item.pricey[1]}
-          <span style={{ color: "darkred" }}>{item.offer}</span>
+          {item.offer && (
+            <>
+              <br />
+              Special Offer: {item.price.slice(7, 14)}
+              <br />
+              <span style={{ color: "darkred" }}>{item.offer}</span>
+            </>
+          )}
           <br />
           Our Price: £{item.ourPrice}
           <br />
