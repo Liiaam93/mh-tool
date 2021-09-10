@@ -184,13 +184,13 @@ const Prices = () => {
             <td>0.9</td>
           </tr>
           <tr>
-            <td>Art Model</td>
+            <td>Art Model</td> {/* confirmed  */}
             <td>ART</td>
             <td>Hannants</td>
             <td>0.9</td>
           </tr>
           <tr>
-            <td>Art Scale</td>
+            <td>Art Scale</td> {/* confirmed  */}
             <td>ARL</td>
             <td>Hannants</td>
             <td>1.21</td>
@@ -226,7 +226,7 @@ const Prices = () => {
             <td>0.9</td>
           </tr>
           <tr>
-            <td>Azur</td>
+            <td>Azur</td> {/* confirmed  */}
             <td>AZR</td>
             <td>Hannants</td>
             <td>0.9</td>
@@ -238,14 +238,14 @@ const Prices = () => {
             <td>0.9</td>
           </tr>
           <tr>
-            <td>Bare-Metal</td>
+            <td>Bare-Metal</td> {/* confirmed  */}
             <td>BRM</td>
             <td>Hannants</td>
             <td>0.9</td>
           </tr>
           <tr>
-            <td>Barracuda</td>
-            <td>BRC</td>
+            <td>Barracuda</td> {/* confirmed  */}
+            <td>BRR</td>
             <td>Hannants</td>
             <td>0.9</td>
           </tr>
@@ -256,7 +256,13 @@ const Prices = () => {
             <td>1.21</td>
           </tr>
           <tr>
-            <td>Brengun</td>
+            <td>Blue Rider</td> {/* confirmed  */}
+            <td>BLR</td>
+            <td>Hannants</td>
+            <td>0.9</td>
+          </tr>
+          <tr>
+            <td>Brengun</td> {/* confirmed  */}
             <td>BRG</td>
             <td>Hannants</td>
             <td>0.9</td>
@@ -304,19 +310,19 @@ const Prices = () => {
             <td>1.21</td>
           </tr>
           <tr>
-            <td>Colorado </td>
+            <td>Colorado </td> {/* confirmed  */}
             <td>CLR</td>
             <td>Hannants</td>
             <td>0.9</td>
           </tr>
           <tr>
-            <td>Copper State Models </td>
-            <td>CSM</td>
+            <td>Copper State Models </td> {/* confirmed  */}
+            <td>CPP</td>
             <td>Hannants</td>
             <td>1.21</td>
           </tr>
           <tr>
-            <td>Czech Master Kits</td>
+            <td>Czech Master Kits</td> {/* confirmed  */}
             <td>CMK</td>
             <td>Hannants</td>
             <td>0.9</td>
