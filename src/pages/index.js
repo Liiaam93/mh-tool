@@ -7,7 +7,7 @@ import { post } from "../components/Product";
 
 export default function Home() {
   const [postage, setPostage] = useRecoilState(post);
-  const [code, setCode] = useState("Enter a Product Code");
+  const [code, setCode] = useState("");
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -58,6 +58,7 @@ export default function Home() {
           <input
             value={code}
             id="code"
+            placeholder="Enter a Product Code"
             onDoubleClick={(e) => (e.target.value = "")}
             onChange={(e) => setCode(e.target.value)}
             onKeyPress={handleKeyPress}
