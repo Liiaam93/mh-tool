@@ -1,44 +1,72 @@
 import fetch from "isomorphic-fetch";
 import cheerio from "cheerio";
 
-export const fetchCreative = async (code) => {
+const fetchCreative = async (code) => {
   const req = await fetch(
     `http://www.creativemodels.co.uk/advanced_search_result.php?keywords=${code}`
   );
+
   const html = await req.text();
   const $ = cheerio.load(html);
-  const name = $(
-    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(3)"
-  )
-    .text()
-    .replace(/&nbsp;/g, "");
-  const price = $(
-    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(4)"
-  )
-    .text()
-    .replace(/&nbsp;/g, "");
-  const stock = $(
-    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(5)"
-  )
-    .text()
-    .replace(/&nbsp;/g, "");
-  const pCode = $(
-    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(2)"
-  )
-    .text()
-    .replace(/&nbsp;/g, "");
+
   const pageSrc = $(
     "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > table.productListing > tbody > tr.productListing-odd > td:nth-child(3) > a"
   ).attr("href");
 
-  const imgSrc = `http://www.creativemodels.co.uk/images/Products/${code.toUpperCase()}m.jpg`;
+  const req2 = await fetch(pageSrc);
+  const html2 = await req2.text();
+  const $2 = cheerio.load(html2);
+  const brand = $2(
+    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td"
+  )
+    .text()
+    .split(" ")[0];
+
+  let scale = $2(
+    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td"
+  ).text();
+  scale = scale
+    .slice(scale.search(":") - 1, scale.search(":") + 4)
+    .replace(":", "/");
+
+  let name = $2(
+    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td"
+  ).text();
+  name = name.slice(name.search(":") + 4, name.length);
+
+  const desc = $2(
+    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td.smalltext2"
+  )
+    .text()
+    .trim();
+  name += " - \n" + desc;
+
+  const imageSrc =
+    "http://www.creativemodels.co.uk/" + $2("#mainimage").attr("src");
+
+  const price = $2(
+    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(1) > td:nth-child(3)"
+  ).text();
+
+  const stock = $2(
+    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(7) > td > table > tbody > tr > td > table > tbody > tr:nth-child(1) > td:nth-child(4) > img"
+  ).attr("title");
+
+  const style = $2(
+    "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(11) > td > table > tbody > tr:nth-child(2) > td.smalltext2"
+  ).text();
+
+  let ourPrice = (price.replace("£", "") * 0.9).toFixed(2);
 
   const creativeProduct = {
+    brand,
+    scale,
+    style,
     name,
-    pCode,
-    imgSrc,
+    imageSrc,
     price,
     stock,
+    ourPrice,
     pageSrc,
   };
   return creativeProduct;

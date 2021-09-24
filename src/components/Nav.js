@@ -7,13 +7,10 @@ const NavBar = () => {
     <>
       <nav className="nav">
         <Link href="/" className="start-home">
-          Hannants
+          Product Finder
         </Link>
         <Link href="/about" className="start-about">
           New Hannants
-        </Link>
-        <Link href="/creative" className="start-create">
-          Creative
         </Link>
         <Link href="/price-info" className="start-info">
           Product-Info

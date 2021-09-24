@@ -19,7 +19,7 @@ const CreativeProduct = ({ creativeData }) => {
   let name = creativeData.name.replace(/nbsp;/g, "");
   return (
     <div className="container">
-      <img alt="" src={creativeData.imgSrc} width="300px" />
+      <img alt="" src={creativeData.imageSrc} width="300px" />
       <br />
       Price: {creativeData.price} <br />
       Our Price: {ourPrice} <br />

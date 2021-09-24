@@ -28,7 +28,7 @@ const Product = ({ productData }) => {
     );
   };
 
-  const scale = productData.scale.replace(":", "/");
+  const scale = productData.scale;
   return (
     <div className="container">
       <img alt="" src={img} width="300px" className="pImg" /> {""}

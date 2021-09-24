@@ -28,7 +28,10 @@ export const fetchHannants = async (code) => {
     const price = $("#product-details dd:nth-child(12)")
       .text()
       .replace(/\n/g, "");
-    let scale = $("#product-details dd:nth-child(8)").text().replace(/\n/g, "");
+    let scale = $("#product-details dd:nth-child(8)")
+      .text()
+      .replace(/\n/g, "")
+      .replace(":", "/");
     const stock = $("#product-details dd:nth-child(16)")
       .text()
       .replace(/\n/g, "");

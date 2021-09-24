@@ -10,12 +10,18 @@ export default function Home() {
   const [code, setCode] = useState("");
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [supplier, setSupplier] = useState("");
 
   const loadProduct = async () => {
     setPostage("");
     setProduct([]);
     setLoading(true);
-    const req = await fetch(`/api/id/${code}`);
+    let req;
+    if (supplier === "Creative") {
+      req = await fetch(`/api/cid/${code}`);
+    } else {
+      req = await fetch(`/api/id/${code}`);
+    }
     const json = await req.json();
     setProduct(json);
     setLoading(false);
@@ -55,6 +61,13 @@ export default function Home() {
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <div className="buttons">
+          <select
+            value={supplier}
+            onChange={(e) => setSupplier(e.target.value)}
+          >
+            <option value="Hannants">Hannants</option>
+            <option value="Creative">Creative</option>
+          </select>
           <input
             value={code}
             id="code"
