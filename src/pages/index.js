@@ -19,6 +19,8 @@ export default function Home() {
     let req;
     if (supplier === "Creative") {
       req = await fetch(`/api/cid/${code}`);
+    } else if (supplier === "Model Hobbies") {
+      req = await fetch(`/api/mid/${code}`);
     } else {
       req = await fetch(`/api/id/${code}`);
     }
@@ -67,6 +69,7 @@ export default function Home() {
           >
             <option value="Hannants">Hannants</option>
             <option value="Creative">Creative</option>
+            <option value="Model Hobbies">Model Hobbies</option>
           </select>
           <input
             value={code}

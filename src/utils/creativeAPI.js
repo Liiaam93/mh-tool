@@ -57,11 +57,13 @@ const fetchCreative = async (code) => {
   ).text();
 
   let ourPrice = (price.replace("£", "") * 0.9).toFixed(2);
+  const supplier = "Creative";
 
   const creativeProduct = {
     brand,
     scale,
     style,
+    supplier,
     name,
     imageSrc,
     price,

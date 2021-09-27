@@ -119,7 +119,9 @@ const Product = ({ productData }) => {
         <span className="red">Type: </span>
         {productData.style} ({scale})
       </p>
-      <button onClick={openSite}>Open in Hannants</button>
+      {productData.supplier === "Hannants" && (
+        <button onClick={openSite}>Open in Hannants</button>
+      )}
     </div>
   );
 };

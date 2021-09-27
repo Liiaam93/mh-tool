@@ -101,6 +101,7 @@ export const fetchHannants = async (code) => {
     if (name.includes("(designed")) {
       name = name.replace("(designed", "- Designed").replace("kits)", "kits");
     }
+    const supplier = "Hannants";
     const productData = {
       imageSrc,
       name,
@@ -111,6 +112,7 @@ export const fetchHannants = async (code) => {
       scale,
       stock,
       pCode,
+      supplier,
       imageSrc2,
       imageSrc3,
       imageSrc4,
