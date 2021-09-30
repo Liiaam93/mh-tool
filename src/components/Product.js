@@ -59,7 +59,7 @@ const Product = ({ productData }) => {
         )}
       </Collapse>{" "}
       <p>
-        <span className="red">Price:</span> {productData.price.slice(0, 6)}
+        <span className="red">Price:</span> {productData.price.slice(0, 7)}
         <br />
         {productData.offer && (
           <>
