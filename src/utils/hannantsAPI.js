@@ -89,7 +89,7 @@ export const fetchHannants = async (code) => {
       cost = 0.9;
     }
 
-    let ourPrice = (price.slice(0, 6).replace("£", "") * cost).toFixed(2);
+    let ourPrice = (price.slice(0, 7).replace("£", "") * cost).toFixed(2);
     let offer;
 
     const [fPrice, oPrice] = price.split(" ");
