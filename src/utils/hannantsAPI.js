@@ -65,6 +65,7 @@ export const fetchHannants = async (code) => {
       "Merit",
       "FLY",
       "Yahu Models",
+      "KV Models",
       "Infinity Model",
       "Lima November",
       "Peewit",
