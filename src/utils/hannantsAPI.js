@@ -77,6 +77,7 @@ export const fetchHannants = async (code) => {
       "I LOVE KIT",
       "Milspec",
       "Begemot",
+      "Zebrano",
     ];
     let cheap = ["Dragon", "Zvezda"];
     let cost;

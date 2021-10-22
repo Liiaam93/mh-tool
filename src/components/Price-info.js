@@ -1135,7 +1135,7 @@ const Prices = () => {
             <td>Zebrano</td>
             <td>ZBR</td>
             <td>Hannants</td>
-            <td>0.9</td>
+            <td>1.21</td>
           </tr>
           <tr>
             <td>Zvezda</td>
