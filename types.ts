@@ -15,6 +15,7 @@ export interface Product {
   name: string;
   id: string;
   ourPrice: string;
+  imgArr: ImgArray[];
 }
 export const expensive: string[] = [
   "SBS Model",
