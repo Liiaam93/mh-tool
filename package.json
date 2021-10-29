@@ -13,7 +13,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
     "cheerio": "^1.0.0-rc.10",
+    "framer-motion": "^4.1.17",
     "fs": "^0.0.1-security",
     "isomorphic-fetch": "^3.0.0",
     "next": "11.0.1",
@@ -22,6 +26,7 @@
     "recoil": "^0.4.0"
   },
   "devDependencies": {
+    "@types/react": "^17.0.33",
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1"
   }
