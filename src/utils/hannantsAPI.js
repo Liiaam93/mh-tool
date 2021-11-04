@@ -69,6 +69,7 @@ export const fetchHannants = async (code) => {
       "Infinity Model",
       "Lima November",
       "Peewit",
+      "Linear-A",
       "Dead Design Models",
       "Das Werk",
       "HGW",
