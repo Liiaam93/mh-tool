@@ -46,6 +46,7 @@ export const fetchHannants = async (code) => {
     let expensive = [
       "SBS Model",
       "Modelsvit",
+      "Avalon",
       "PJ Productions",
       "Star Decals",
       "Echelon FD",
