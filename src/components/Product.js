@@ -113,7 +113,10 @@ const Product = ({ productData }) => {
           fontSize: "18px",
         }}
       >
-        {productData.brand} {scale + " "} {productData.name}{" "}
+        {productData.brand} {scale + " "}{" "}
+        {!productData.desc && productData.name}{" "}
+        {productData.desc &&
+          productData.desc.split("\n").map((el) => <p key={el}>{el}</p>)}
       </p>
       <p>
         <span className="red">Type: </span>

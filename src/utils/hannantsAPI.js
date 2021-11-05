@@ -18,7 +18,7 @@ export const fetchHannants = async (code) => {
     const imageSrc4 = $("#product-thumbs-list > li:nth-child(4) > a").attr(
       "href"
     );
-    let name = $("#product-details dd:nth-child(2)").text().replace(/\n/g, "");
+    let name = $("#product-details dd:nth-child(2)").text();
     const brand = $("#product-details dd:nth-child(4)")
       .text()
       .replace(/\n/g, "");

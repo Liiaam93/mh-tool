@@ -39,24 +39,30 @@ const fetchMH = async (code) => {
 
   const price = $("#_EKM_PRODUCTPRICE").text();
 
-  const stock = $("#product_form > div > div > div > div > p").text();
+  let stock = $("#product_form > div > div > div > div > p").text();
+
+  stock ? stock : (stock = "More than 3");
 
   let desc = $(
     "body > main > article > ekm-section:nth-child(2) > section > div > div:nth-child(1) > div > span"
   ).text();
 
-  desc = desc.slice(name.length, desc.length);
+  //desc = desc.slice(name.length, desc.length);
 
   const ourPrice = price;
   const style = $(
     "body > main > article > ekm-section:nth-child(1) > section > section > span:nth-child(3) > a > span"
   ).text();
   const brand = "";
+  const GTIN = $("#_EKM_PRODUCTATRRIBUTE_1_GTIN_VALUE").text();
+  GTIN ? (desc = desc + "GTIN:" + GTIN) : (desc = desc);
+
   const scale = "";
   const supplier = "Model Hobbies";
 
   const res = {
     name: name,
+    desc: desc,
     imageSrc: img,
     price: "£" + price,
     scale: scale,
