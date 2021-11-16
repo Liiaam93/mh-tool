@@ -51,6 +51,7 @@ export const fetchHannants = async (code) => {
       "Star Decals",
       "Echelon FD",
       "AML",
+      "Quinta Studio",
       "Mac Distribution",
       "Art Scale",
       "A & A Model",

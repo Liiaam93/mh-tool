@@ -212,7 +212,7 @@ const Prices = () => {
             <td>AVL</td>
             <td>Hannants</td>
             <td>1.21</td>
-          </tr>  
+          </tr>
           <tr>
             <td>AVI Models</td>
             <td>AVM</td>
@@ -626,7 +626,7 @@ const Prices = () => {
             <td>LNN</td>
             <td>Hannants</td>
             <td>1.21</td>
-          </tr> 
+          </tr>
           <tr>
             <td>Linear-A</td>
             <td>LNR</td>
@@ -878,6 +878,12 @@ const Prices = () => {
             <td>QCK</td>
             <td>Hannants</td>
             <td>0.9</td>
+          </tr>
+          <tr>
+            <td>Quinta Studio</td>
+            <td>QNT</td>
+            <td>Hannants</td>
+            <td>1.21</td>
           </tr>
           <tr>
             <td>Red Box</td>
