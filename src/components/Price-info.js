@@ -749,9 +749,9 @@ const Prices = () => {
           </tr>
           <tr>
             <td>Model Art</td>
-            <td>MRT</td>
+            <td>MDA</td>
             <td>Hannants</td>
-            <td>0.9</td>
+            <td>1.21</td>
           </tr>
           <tr>
             <td>Model Maker Decals</td>

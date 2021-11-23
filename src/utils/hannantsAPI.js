@@ -59,6 +59,7 @@ export const fetchHannants = async (code) => {
       "Metallic Details",
       "Micro-Mir",
       "DK Decals",
+      "Model Art",
       "AVI Models",
       "Hobby 2000",
       "Clear Prop Models",
