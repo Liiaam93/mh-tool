@@ -46,6 +46,7 @@ export const fetchHannants = async (code) => {
     let expensive = [
       "A & A Model",
       "Art Scale",
+      "Anigrand Craftswork",
       "AML",
       "Armory",
       "AVI Models",

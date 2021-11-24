@@ -154,6 +154,12 @@ const Prices = () => {
             <td>0.9</td>
           </tr>
           <tr>
+            <td>Anigrand Craftswork</td>
+            <td>ANG</td>
+            <td>Hannants</td>
+            <td>1.21</td>
+          </tr>
+          <tr>
             <td>AOA Decals</td>
             <td>AOA</td>
             <td>Hannants</td>
