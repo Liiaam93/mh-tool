@@ -574,6 +574,12 @@ const Prices = () => {
             <td>1.21</td>
           </tr>
           <tr>
+            <td>ION Model</td>
+            <td>ION</td>
+            <td>Hannants</td>
+            <td>1.21</td>
+          </tr>
+          <tr>
             <td>Infinity Models</td>
             <td>INF</td>
             <td>Hannants</td>
@@ -1040,6 +1046,12 @@ const Prices = () => {
             <td>THN</td>
             <td>Hannants</td>
             <td>0.9</td>
+          </tr>
+          <tr>
+            <td>Thunderbird Models</td>
+            <td>TBM</td>
+            <td>Hannants</td>
+            <td>1.21</td>
           </tr>
           <tr>
             <td>Tiger Models</td>
