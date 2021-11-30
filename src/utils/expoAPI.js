@@ -14,9 +14,10 @@ const fetchExpo = async (code) => {
   const $2 = cheerio.load(html2);
 
   const imageSrc = `https://www.expotools.com/acatalog/${code}.jpg`;
-  const $3 = await fetch(
+  const req3 = await fetch(
     `https://www.expotools.com/acatalog/info-${code}.html`
   );
+  const $3 = await req3.text();
 
   const imageSrc4 = $3(`#extended-info > div.container`)
     .find("img")
