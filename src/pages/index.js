@@ -21,6 +21,8 @@ export default function Home() {
       req = await fetch(`/api/cid/${code}`);
     } else if (supplier === "Model Hobbies") {
       req = await fetch(`/api/mid/${code}`);
+    } else if (supplier === "Expo") {
+      req = await fetch(`/api/eid/${code}`);
     } else {
       req = await fetch(`/api/id/${code}`);
     }
@@ -69,6 +71,7 @@ export default function Home() {
           >
             <option value="Hannants">Hannants</option>
             <option value="Creative">Creative</option>
+            <option value="Expo">Expo</option>
             <option value="Model Hobbies">Model Hobbies</option>
           </select>
           <input
