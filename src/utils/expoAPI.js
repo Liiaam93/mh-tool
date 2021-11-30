@@ -20,9 +20,9 @@ const fetchExpo = async (code) => {
   const html3 = await req3.text();
   const $3 = cheerio.load(html3);
 
-  const imageSrc4 = $3(`#extended-info > div.container`)
-    .find("img")
-    .attr("src");
+  const imageSrc4 =
+    "https://www.expotools.com/acatalog/" +
+    $3(`#extended-info > div.container`).find("img").attr("src");
 
   const name = $2("#idBreadcrumbsTop > p > span").text();
   let desc = $2("#home > p")
