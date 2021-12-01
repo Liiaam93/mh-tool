@@ -20,7 +20,7 @@ const fetchExpo = async (code) => {
   const html3 = await req3.text();
   const $3 = cheerio.load(html3);
 
-  const imageSrc4 =
+  const imageSrc2 =
     "https://www.expotools.com/acatalog/" +
     $3(`#extended-info > div.container`).find("img").attr("src");
 
@@ -59,16 +59,11 @@ const fetchExpo = async (code) => {
   ).toFixed(2);
   const ourPrice = (price * 0.9).toFixed(2);
   const pCode = code;
-  const imageSrc2 = `https://www.expotools.com/acatalog/${code}a.jpg` || "";
-  const imageSrc3 =
-    `https://www.expotools.com/acatalog/${code}painted.jpg` || "";
 
   desc = name + " " + desc;
   const data = {
     imageSrc,
     imageSrc2,
-    imageSrc3,
-    imageSrc4,
     name,
     brand,
     desc,
