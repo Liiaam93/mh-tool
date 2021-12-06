@@ -49,6 +49,7 @@ export const fetchHannants = async (code) => {
       "Anigrand Craftswork",
       "AML",
       "Armory",
+      "Attack Kits",
       "AVI Models",
       "Avalon",
       "Begemot",
