@@ -202,7 +202,7 @@ const Prices = () => {
             <td>1.21</td>
           </tr>
           <tr>
-            <td>Attack</td>
+            <td>Attack Kits</td>
             <td>ATT</td>
             <td>Hannants</td>
             <td>1.21</td>
