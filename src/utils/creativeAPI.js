@@ -56,7 +56,7 @@ const fetchCreative = async (code) => {
     "body > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td.mws_boxCenter > table > tbody > tr > td > form > table > tbody > tr:nth-child(11) > td > table > tbody > tr:nth-child(2) > td.smalltext2"
   ).text();
 
-  const cheap = ["Masterbox", "Dragon"];
+  const cheap = ["Masterbox", "Dragon", "Miniart", "Hobbyboss"];
   let cost;
   if (cheap.includes(brand)) {
     cost = 0.8;
