@@ -54,6 +54,7 @@ export const fetchHannants = async (code) => {
       "Avalon",
       "Begemot",
       "Blackdog",
+      "Black Dog",
       "Bronco",
       "Clear Prop Models",
       "Copper State Models",
